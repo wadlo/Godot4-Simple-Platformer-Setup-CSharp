@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceigw0gss6jj7"]
+
+[ext_resource type="Script" path="res://PlatformerController2D.cs" id="1_pd14l"]
+[ext_resource type="Texture2D" uid="uid://byaswxy0e6jw7" path="res://icon.svg" id="2_nwbhl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_merpy"]
+size = Vector2(130, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p78q"]
+size = Vector2(121, 127)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_pd14l")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-2, -1)
+texture = ExtResource("2_nwbhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_merpy")
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(-1.5, 293)
+scale = Vector2(3.60156, 1)
+texture = ExtResource("2_nwbhl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D"]
+position = Vector2(-2.5, -1.5)
+shape = SubResource("RectangleShape2D_7p78q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

@@ -7,3 +7,4 @@ Supports
 - jump buffer
 - fall speed multiplier
 
+Support: Reach out on Discord! https://discord.gg/mdwPYkHMBw 
